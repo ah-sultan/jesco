@@ -126,7 +126,7 @@ function LeftSideBar({ productData }) {
 export default LeftSideBar
 
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     // Fetch data from external API
     const res = await fetch(`https://api.npoint.io/44d9930f29cc64084a3a`)
     const productData = await res.json()

@@ -19,7 +19,7 @@ function VariableProduct({ products }) {
 
 export default VariableProduct
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   // Fetch data from external API
   const res = await fetch(`https://api.npoint.io/44d9930f29cc64084a3a`)
   const products = await res.json()

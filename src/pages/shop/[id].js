@@ -22,7 +22,7 @@ function VariableProduct({ product, relatedProduct }) {
 
 export default VariableProduct
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const resRelated = await fetch(`https://api.npoint.io/44d9930f29cc64084a3a`)
   const relatedProduct = await resRelated.json()
 
@@ -37,22 +37,3 @@ export async function getStaticProps(context) {
   };
 }
 
-
-export async function getStaticPaths() {
-
-
-  const response = await fetch('https://api.npoint.io/44d9930f29cc64084a3a');
-  const products = await response.json();
-  const paths = products.map((product) => ({
-    params: {
-      id: product.id.toString(),
-      cetagory: product.category,
-
-    },
-  }));
-
-  return {
-    paths,
-    fallback: false,
-  };
-}
