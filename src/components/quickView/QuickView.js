@@ -19,6 +19,7 @@ import { FreeMode, Navigation, Thumbs } from "swiper";
 import { useDispatch, useSelector } from 'react-redux';
 import { hideQuickView } from '@/feature/quickView/quickViewSlice';
 import { addToCart, decraseItemQuantity } from '@/feature/cart/cartSlice';
+import { AiOutlineClose } from 'react-icons/ai';
 
 function QuickView(props) {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -53,6 +54,10 @@ function QuickView(props) {
         <div className="absolute z-[120] w-full h-full top-0 bottom-0 left-0 right-0" onClick={() => dispach(hideQuickView())}>
         </div>
         <div className="relative z-[130] w-full md:w-[700px] lg:w-[960px] mx-auto p-3 sm:p-[35px] mb-100px">
+          {/* Quick View Close Button */}
+          <button onClick={() => dispach(hideQuickView())} className="absolute top-10 right-10 sm:top-16 sm:right-16 lg:right-12 lg:top-12 text-2xl z-50">
+            <AiOutlineClose />
+          </button>
           <div className="p-4 bg-white flex flex-col lg:flex-row rounded  gap-x-6 gap-y-30px">
             {/* Images Section */}
             <div className="lg:w-1/2">
@@ -99,7 +104,7 @@ function QuickView(props) {
 
             {/* Text Section  */}
             <div className="lg:w-1/2">
-              <h4 className="text-2xl md:text-30px leading-normal font-semibold text-black mb-18px">{product.title}</h4>
+              <h4 className="text-2xl md:text-30px leading-normal font-semibold text-black mb-18px lg:mt-4">{product.title}</h4>
               <h6 className="text-primary-900 text-2xl leading-tight mb-5">${mainPrice.toFixed(2)} <span className="text-tGreay-300 inline-block text-lg"><del>${discountPrice.toFixed(2)}</del></span></h6>
               {/* Reviews Section */}
               <div>
