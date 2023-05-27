@@ -11,4 +11,4 @@ I have clone this templte from themeforest. It was HTML template. I have convert
 - React Icons
 - Image (some image collect from another ecommarce website)
 
-`Note` I have create this template only showing for protfolio.
+`Note` I have created this template only showing for protfolio.
